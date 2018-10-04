@@ -5,13 +5,18 @@
 }
 
 Person.prototype.sayHi = function () {
-    alert(this.user_name + '  ' + this.user_age + '   ' + this.user_address);
+    alert(this.user_name + '  ' + this.user_age + '   ' + this.user_address + '   ' + this.email);
+    //必须要加this
 };
+Person.prototype.email = 'default@prototype.com';
+Person.prototype.phoneNumber = '1234567890';
+
 
 var v1 = new Person();
 v1.user_address = '地址1';
 v1.user_age = 10;
 v1.user_name = 'USR1';
+v1.email = 'ccc@a.com';
 
 var v2 = new Person();
 v2.user_address = '地址2';

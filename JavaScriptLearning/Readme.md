@@ -31,5 +31,11 @@ var f1=new Function('x,y,z','alert(x+y+z);');
 f1(1,2,3);
 ```
 
+### 原型理解笔记Prototype
+
+![](./NotePics/prototypeNote1.png)
+
+
+
 
 
