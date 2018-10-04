@@ -17,6 +17,8 @@ alert(user_name);
 //原因：
 //在f1函数中，预解析变量user_name，所以第一次alert出来是undefined，而第二次是yzk。第三次alert出来的是当前块的user_name，所以是steve
 ```
+> 一般会在头部提前声明要使用的变量
+
 
 
 
