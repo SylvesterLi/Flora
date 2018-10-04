@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="JulyScript01.html" />
+    <Content Include="script02Prototype.js" />
     <Content Include="script01.js" />
     <Content Include="Web.config" />
   </ItemGroup>
