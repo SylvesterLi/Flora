@@ -35,7 +35,32 @@ f1(1,2,3);
 
 ![](./NotePics/prototypeNote1.png)
 
+> 给系统类型注册原型
 
+> ![](./NotePics/stringPrototype.png)
 
+### 继承
 
+![](./NotePics/pt2.png)
+
+### 动态注册事件
+
+> 尽量多使用匿名函数
+> 尽量使用动态注册事件
+
+```html
+<input type="button" id="onbtn" value="动态注册事件"/>
+```
+
+```javascript
+window.onload = function () {
+    //document.getElementById('btn').value = 'aaa';
+    document.getElementById('onbtn').onclick = function () {
+        //打印Date的正确方式
+        alert(new Date().toLocaleDateString());
+    };
+}
+```
+``` xxx.onclick=fnClick;``` 与 ```xxx.onclick=fnClick();``` 的区别在于
+> fnClick是赋值事件，fuClick()是赋值```函数处理后return```的结果(一般为undefined)
 

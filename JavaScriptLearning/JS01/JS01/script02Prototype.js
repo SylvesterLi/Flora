@@ -24,4 +24,18 @@ v2.user_age = 12;
 v2.user_name = 'USR2';
 
 v1.sayHi();
-v2.sayHi();
+//v2.sayHi();
+
+//-----------继承------------
+var v3 = new Person();
+
+function Student() { }
+//原型为v3
+Student.prototype = v3;
+
+var s1 = new Student();
+console.log(s1.phoneNumber);
+
+
+
+//可以通过prototype给系统自带的String等添加函数
