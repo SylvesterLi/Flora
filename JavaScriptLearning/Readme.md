@@ -19,6 +19,17 @@ alert(user_name);
 ```
 > 一般会在头部提前声明要使用的变量
 
+```javascript
+//匿名函数
+//  1.不写函数名
+var f1=function(){alert('hi');};
+//  2.定义的同时直接调用
+(function (x,y){alert(x+y);})(10,50);
+//  3.使用Eval或者new Function
+//      推荐使用new Function.Eval中的变量外部可访问到
+var f1=new Function('x,y,z','alert(x+y+z);');
+f1(1,2,3);
+```
 
 
 
