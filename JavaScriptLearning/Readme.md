@@ -64,3 +64,43 @@ window.onload = function () {
 ``` xxx.onclick=fnClick;``` 与 ```xxx.onclick=fnClick();``` 的区别在于
 > fnClick是赋值事件，fuClick()是赋值```函数处理后return```的结果(一般为undefined)
 
+### SetInterval使用定时器
+
+HTML代码：
+```html
+<input type="text" id="txt" value="0">
+<input type="button" id="intervalStart" value="计时开始" />
+<input type="button" id="intervalStop" value="计时结束" />
+```
+
+定时器使用代码：
+```js
+window.onload = function () {
+    var timerId;
+    //document.getElementById('btn').value = 'aaa';
+    //找到btn 绑定开始事件
+    document.getElementById('intervalStart').onclick = function () {
+        //开始计时
+        timerId = setInterval(function () {
+            //++
+            document.getElementById('txt').value++;
+        }, 500);
+        console.log(timerId);
+    };
+    document.getElementById('intervalStop').onclick = function () {
+        //停止计时
+        window.clearInterval(timerId);
+        console.log(timerId);
+    };
+}
+```
+
+在使用时遇到一个问题：
+
+![](./NotePics/errorStop.png)
+
+当多次点击“计时开始”按钮时，“计时结束”按钮无法结束计时，并且计时速度明显增快，多点一次就更快一点。
+
+为调查原因，使用了Console.log打印出TimerId。发现，clearInterval指定的id为7时才能停止Timer。
+
+
