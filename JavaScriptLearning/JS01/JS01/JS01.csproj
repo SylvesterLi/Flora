@@ -73,6 +73,7 @@
     <Content Include="script02Prototype.js" />
     <Content Include="script01.js" />
     <Content Include="Web.config" />
+    <Content Include="WindowObject.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
