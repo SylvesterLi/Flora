@@ -72,6 +72,8 @@
     <Content Include="JulyScript01.html" />
     <Content Include="script02Prototype.js" />
     <Content Include="script01.js" />
+    <Content Include="src\star.png" />
+    <Content Include="src\star2.png" />
     <Content Include="Web.config" />
     <Content Include="WindowObject.js" />
   </ItemGroup>

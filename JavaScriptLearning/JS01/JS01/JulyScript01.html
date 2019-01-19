@@ -1,21 +1,76 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+
+    <script type="text/javascript">
+        //星星评价：
+        window.onload = function ()
+        {
+            //获取所有td
+            var tds = document.getElementsByTagName('td');
+            for (var i = 0; i < tds.length; i++) {
+                tds[i].onmouseover = function () {
+                    for (var j = 0; j < tds.length; j++) {
+                        tds[j].style.backgroundImage = "url('src/star2.png')";
+                        if (tds[j] === this) {
+                            break;
+                        }
+                    }
+
+
+                };
+            
+
+
+            tds[i].onmouseout = function ()
+            {
+                
+                for (var j = 0; j < tds.length; j++)
+                {
+                    tds[j].style.backgroundImage = "url('src/star.png')";
+                    if (tds[j] === this)
+                    {
+                        break;
+                    }
+
+
+                }
+            };
+
+
+            tds[i].onclick = function ()
+            {
+                for (var j = 0; j < tds.length; j++)
+                {
+                        tds[j].removeAttribute('isclicked');
+                }
+                this.setAttribute('isclicked', 'isclicked');
+            };
+
+                
+
+
+
+            }//for循环
+
+
+        };
+        
+    </script>
+
+
     <style type="text/css">
-        #div1{
-            width: 400px;
-            height:500px;
-            border:1px solid blue;
+        td {
+            width: 258px;
+            height: 198px;
+            background-image: url(src/star.png);
         }
     </style>
-    <script type="text/javascript">
-        document.write('hellow!!');
-    </script>
-  
-    <meta charset="utf-8" />
-    <title>这是标题</title>
 
-    <script src="WindowObject.js"></script>
+    <meta charset="utf-8" />
+    <title>文件名为JulyScript的html文件</title>
+
+
 
 
     <!--<script src="ChangeTitle.js"></script>-->
@@ -35,13 +90,13 @@
 </head>
 <body>
 
-    <input type="text" id="portNum" />
+    <!--<input type="text" id="portNum" />
     <input type="text" id="hostName" />
     <form>
         <input type="text" id="txt" value="0">
         <input type="button" id="btn" value="233" />
-        <!--<input type="button"value="hellow" onclick="alert('hello');"/>-->
-        <!--<input type="button" id="onbtn" value="动态注册事件"/>-->
+        <input type="button"value="hellow" onclick="alert('hello');"/>
+        <input type="button" id="onbtn" value="动态注册事件"/>
         <input type="button" id="intervalStart" value="计时开始" />
         <input type="button" id="intervalStop" value="计时结束" />
 
@@ -49,7 +104,25 @@
         <div id="div1">
         </div>
 
-    </form>
+    </form>-->
     <!--<script src="script01.js"></script>-->
+
+    <table cellspacing="2">
+        <tr>
+            <td></td>
+
+            <td></td>
+
+            <td></td>
+
+            <td></td>
+
+            <td></td>
+        </tr>
+    </table>
+
+
+
+
 </body>
 </html>
