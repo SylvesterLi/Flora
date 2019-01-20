@@ -2,62 +2,47 @@
 <html>
 <head>
 
+
+    <script src="jquery-3.3.1.js"></script>
+
+
     <script type="text/javascript">
-        //星星评价：
-        window.onload = function ()
-        {
-            //获取所有td
-            var tds = document.getElementsByTagName('td');
-            for (var i = 0; i < tds.length; i++) {
-                tds[i].onmouseover = function () {
-                    for (var j = 0; j < tds.length; j++) {
-                        tds[j].style.backgroundImage = "url('src/star2.png')";
-                        if (tds[j] === this) {
-                            break;
-                        }
-                    }
+        $(function () {
+            $('p').mouseover
+                (
+                function () {
+                    $(this).css(
+                        {
+                            width: '90px',
+                            backgroundColor: 'Red'
+                        }).siblings.css(
+                            {
+                                backgroundColor: 'Yellow'
+                            });
+
+                }
+            );
+            $('p').mouseout(function(){
+                $(this).css({
+                    backgroundColor: ''
+                });
+            });
+
+        }//$func
+        );
 
 
-                };
+        $(function () {
+            $('.xxx').css(
+                {
+                    border: '10px solid blue'
+                });
             
-
-
-            tds[i].onmouseout = function ()
-            {
-                
-                for (var j = 0; j < tds.length; j++)
-                {
-                    tds[j].style.backgroundImage = "url('src/star.png')";
-                    if (tds[j] === this)
-                    {
-                        break;
-                    }
-
-
-                }
-            };
-
-
-            tds[i].onclick = function ()
-            {
-                for (var j = 0; j < tds.length; j++)
-                {
-                        tds[j].removeAttribute('isclicked');
-                }
-                this.setAttribute('isclicked', 'isclicked');
-            };
-
-                
+        });
 
 
 
-            }//for循环
-
-
-        };
-        
     </script>
-
 
     <style type="text/css">
         td {
@@ -106,8 +91,7 @@
 
     </form>-->
     <!--<script src="script01.js"></script>-->
-
-    <table cellspacing="2">
+    <!--<table cellspacing="2">
         <tr>
             <td></td>
 
@@ -119,10 +103,30 @@
 
             <td></td>
         </tr>
-    </table>
+    </table>-->
 
+    <p>
+        aaa 啊沙发沙发嘎哈三个房间的好哥们会发生
+    </p>
+    <p class="xxx">
+        a国际航空，表空间
+    </p>
+    <p>
+        右腿话剧很快就会
+    </p>
 
+    <p class="xxx">
+        aaa 啊沙发沙发嘎哈三个房间的好哥们会发生
+    </p>
+    <p class="xxx">
+        a国际航空，表空间
+    </p>
+    <p>
+        右腿话剧很快就会
+    </p>
+    <p id="div1">
 
+    </p>
 
 </body>
 </html>

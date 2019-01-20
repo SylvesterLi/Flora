@@ -104,3 +104,143 @@ window.onload = function () {
 为调查原因，使用了Console.log打印出TimerId。发现，clearInterval指定的id为7时才能停止Timer。
 
 
+
+### 星星评价是怎么做的
+
+```javascript
+<script type="text/javascript">
+    //星星评价：
+    window.onload = function ()
+    {
+        //获取所有td
+        var tds = document.getElementsByTagName('td');
+        for (var i = 0; i < tds.length; i++) 
+        {
+            tds[i].onmouseover = function () 
+            {
+                for (var j = 0; j < tds.length; j++) {
+                    tds[j].style.backgroundImage = "url('src/star2.png')";
+                    if (tds[j] === this) {
+                        break;
+                    }
+                }
+            };
+            tds[i].onmouseout = function ()
+            {
+                
+                for (var j = 0; j < tds.length; j++)
+                {
+                    tds[j].style.backgroundImage = "url('src/star.png')";
+                    if (tds[j] === this)
+                    {
+                        break;
+                    }
+                }
+            };
+            tds[i].onclick = function ()
+            {
+                for (var j = 0; j < tds.length; j++)
+                {
+                        tds[j].removeAttribute('isclicked');
+                }
+                this.setAttribute('isclicked', 'isclicked');
+            };
+        }//for循环
+    };
+</script>
+```
+
+其中```tds[j].style.backgroundImage = "url('src/star.png')";``` “”代表中间是个函数，而‘’代表Content（内容）
+
+#### 效果：
+
+![](./NotePics/评价.gif)
+
+
+### jQuery选择器及dom对象转换
+
+* dom对象转换：
+
+```js
+//jq对象对浏览器的兼容性更好
+//dom to jQuery:
+$(dom)
+
+//jquery to dom
+var dom=$jqueryObject[0];
+var dom=$icueryobject get(0);
+```
+
+* jQuery设置P标签
+```js
+<script src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(function () 
+{
+    $('p').css(
+        {
+            width: '90px',
+            backgroundColor:'Red'
+        });
+}
+);
+</script>
+```
+
+* jQuery设置类样式表（class）
+ ```js
+ $(function () {
+$('.xxx').css(
+    {
+        border: '10px solid blue'
+    });
+});
+```
+* 通过id改变div
+```js
+$(function () 
+{
+    $('#div1').text('hello');
+});
+```
+
+* 星星评价更简洁的写法
+
+```js
+//如果需要做到前面一样的变色，可以使用prevAll与end.nextAll
+$(function () 
+{
+    $('p').mouseover(function () 
+    {
+        $(this).css(
+            {
+                width: '90px',
+                backgroundColor: 'Red'
+            }).siblings.css(
+                {
+                    backgroundColor: 'Yellow'
+                });
+    });
+    $('p').mouseout(function()
+    {
+        $(this).css({
+            backgroundColor: ''
+        });
+    });
+
+}//$func
+);
+```
+* 还有更多的选择器
+
+![](./NotePics/jq选择器.png)
+
+* 层次选择器
+
+```js
+//div下的所有p标签
+$('div p').css({border:'10px blue'});
+//选取body下的直接子元素 body中div中的p不会被选取（中间注意有空格）
+$('body > p').css({border:'10px blue'});
+
+```
