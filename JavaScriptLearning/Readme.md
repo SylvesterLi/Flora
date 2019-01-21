@@ -216,8 +216,9 @@ $(function ()
             {
                 width: '90px',
                 backgroundColor: 'Red'
-            }).siblings.css(
+            }).siblings().css(
                 {
+                    //siblings应加()
                     backgroundColor: 'Yellow'
                 });
     });
