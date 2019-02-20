@@ -10,13 +10,16 @@ namespace Day2.Controllers
     public class DefaultController : Controller
     {
         // GET: Default
+        [HttpGet]
         public ActionResult Index()
         {
             //return Name
             return View();
         }
-        public ActionResult Rea2(FormCollection m)
+        [HttpPost]
+        public ActionResult Index(FormCollection m,HttpPostedFileBase fileBase)
         {
+            fileBase.SaveAs(Server.MapPath("~/"));
             string name = m["name"];
             string  id = m["id"];
             return Content(name + "\t" + id);
