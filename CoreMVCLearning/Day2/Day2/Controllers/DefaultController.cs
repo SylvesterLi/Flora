@@ -19,7 +19,7 @@ namespace Day2.Controllers
         [HttpPost]
         public ActionResult Index(FormCollection m,HttpPostedFileBase fileBase)
         {
-            fileBase.SaveAs(Server.MapPath("~/"));
+            fileBase.SaveAs(Server.MapPath("~/"+fileBase.FileName));
             string name = m["name"];
             string  id = m["id"];
             return Content(name + "\t" + id);
