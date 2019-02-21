@@ -24,6 +24,24 @@ namespace Day2.Controllers
             string  id = m["id"];
             return Content(name + "\t" + id);
         }
-        
+
+        [HttpGet]
+        public ActionResult Edit()
+        {
+            IndexModel indexModel = new IndexModel();
+            indexModel.Id = 12;
+            indexModel.Name = "234safg";
+            //return Name
+            return View(indexModel);
+        }
+        [HttpPost]
+        public ActionResult Edit(FormCollection m, HttpPostedFileBase fileBase)
+        {
+            fileBase.SaveAs(Server.MapPath("~/" + fileBase.FileName));
+            string name = m["name"];
+            string id = m["id"];
+            return Content(name + "\t" + id);
+        }
+
     }
 }
