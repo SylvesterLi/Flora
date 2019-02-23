@@ -1,0 +1,19 @@
+﻿
+<!DOCTYPE html>
+<!-- 这是母版 -->
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title : L1</title>
+</head>
+<body>
+    @RenderSection("Header",false)
+    <br/>
+
+    <div>
+        @RenderBody()
+    </div>
+    <br/>
+    @RenderSection("Footer",false)
+</body>
+</html>

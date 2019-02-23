@@ -104,6 +104,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\LaysController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -121,6 +122,9 @@
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Default\Edit.cshtml" />
+    <Content Include="Views\Lays\L1.cshtml" />
+    <Content Include="Views\Shared\Share1.cshtml" />
+    <Content Include="Views\Lays\View.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
