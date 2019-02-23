@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Day2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,7 +16,13 @@ namespace Day2.Controllers
         }
         public ActionResult L1()
         {
-            return View();
+            List<IndexModel> indexModels = new List<IndexModel>();
+            indexModels.Add(new IndexModel { Id = 12, Name = "huahua" });
+            indexModels.Add(new IndexModel { Id = 68, Name = "xiaoQiang" });
+            indexModels.Add(new IndexModel { Id = 39, Name = "Ming" });
+            indexModels.Add(new IndexModel { Id = 6, Name = "MLXG" });
+            
+            return View(indexModels);
         }
     }
 }
