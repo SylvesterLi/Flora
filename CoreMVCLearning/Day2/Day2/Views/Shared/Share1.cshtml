@@ -7,13 +7,22 @@
     <title>@ViewBag.Title : L1</title>
 </head>
 <body>
-    @RenderSection("Header",false)
-    <br/>
+    @if (IsSectionDefined("Header"))
+    {
+        RenderSection("Header");
+    }
+    else
+    {
+        <a href="">--------------</a>
+    }
+
+
+    <br />
 
     <div>
         @RenderBody()
     </div>
-    <br/>
-    @RenderSection("Footer",false)
+    <br />
+    @RenderSection("Footer", false)
 </body>
 </html>
