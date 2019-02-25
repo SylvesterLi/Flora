@@ -1,4 +1,4 @@
-﻿
+﻿@model System.Data.Entity.DbSet<Day2.Models.Event>
 @{
     Layout = null;
 }
@@ -15,10 +15,20 @@
     <div>
         <form>
             <table>
-                <tr>
-                    <td>11</td>
-                    <td>hh</td>
-                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id    |</td>
+                        
+                        <td>@item.EventTime |</td>
+                        
+                        <td>@item.Description</td>
+                        <td><a href="~/EventCheck/Edit?id=@item.Id">编辑</a></td>
+                    </tr>
+                }
+
+
             </table>
         </form>
     </div>
